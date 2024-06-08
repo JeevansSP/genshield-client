@@ -8,6 +8,7 @@ import os
 
 
 api_key = os.environ.get("SHERLOGS_API_KEY")
+print('this is api key')
 
 if not api_key:
     raise KeyError("please provide a valid api key")
