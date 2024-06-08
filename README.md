@@ -15,11 +15,11 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Installation
 
-1. Clone the repository: 
+1. Clone the repository:  
     `git clone https://github.com/JeevansSP/sherlogs-client`
-2. Change to the project directory: 
+2. Change to the project directory:  
     `cd sherlogs-client`
-3. Create a virtual environment (mandatory): 
+3. Create a virtual environment (mandatory):  
     `python -m venv env`
 4. Activate the virtual environment:
 - **Windows**:
@@ -35,7 +35,7 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Configuration and Running
 
-6. Start the MitmProxy server in headless mode on port 8080, listening to ports 80 and 443: 
+6. Start the MitmProxy server in headless mode on port 8080, listening to ports 80 and 443:  
     `mitmproxy -p 8080`
 
 7. Initially, any web connections from browsers will fail due to the lack of a trusted certificate.
