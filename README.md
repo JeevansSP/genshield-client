@@ -5,7 +5,9 @@
 SherLogs is a unique application designed to capture logs from various LLM service applications without locking you into specific frameworks, unlike some current tools (such as LangSmith). SherLogs intercepts text generation and chat completion requests and responses from all known LLM services and conducts safety checks by forwarding this data to our servers for analysis.
 
 This app leverages [MitmProxy](https://mitmproxy.org/), a powerful tool used to analyze and modify HTTP/HTTPS network traffic by acting as a man-in-the-middle (MITM) agent. The structure of the network interaction follows this pattern:  
-client <-> mitm <-> server  
+    ```
+    client <-> mitm <-> server  
+    ```
 
 The server perceives that requests come directly from MitmProxy, which means it can decrypt the responses intended for the client. To ensure the client can also decrypt these intercepted communications securely, we need to add the MitmProxy certificate to the system’s trusted certificate bundle.
 
