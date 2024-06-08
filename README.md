@@ -15,9 +15,12 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/JeevansSP/sherlogs-client`
-2. Change to the project directory: `cd sherlogs-client`
-3. Create a virtual environment (mandatory): `python -m venv env`
+1. Clone the repository: 
+    `git clone https://github.com/JeevansSP/sherlogs-client`
+2. Change to the project directory: 
+    `cd sherlogs-client`
+3. Create a virtual environment (mandatory): 
+    `python -m venv env`
 4. Activate the virtual environment:
 - **Windows**:
   ```
@@ -27,11 +30,13 @@ The server perceives that requests come directly from MitmProxy, which means it 
   ```
   source env/bin/activate
   ```
-5. Install the required packages: `pip install -r requirements.txt`  
+5. Install the required packages: 
+    `pip install -r requirements.txt`  
 
 ### Configuration and Running
 
-6. Start the MitmProxy server in headless mode on port 8080, listening to ports 80 and 443: `mitmproxy -p 8080`
+6. Start the MitmProxy server in headless mode on port 8080, listening to ports 80 and 443: 
+    `mitmproxy -p 8080`
 
 7. Initially, any web connections from browsers will fail due to the lack of a trusted certificate.
 
@@ -50,7 +55,8 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Starting the App
 
-11. Register and generate an API key at `https://sherlogs.cydratech.com`.
+11. Register and generate an API key at 
+    `https://sherlogs.cydratech.com`.
 12. Export the API key in your current shell session:
  ```
  export SHERLOGS_API_KEY="<your_api_key>"
