@@ -13,7 +13,7 @@ print('this is api key ', api_key)
 if not api_key:
     raise KeyError("please provide a valid api key")
 
-sherlogs_endpoint = "http://localhost:8000/raw/log"
+sherlogs_endpoint = "https://sherlogs.cydratech.com/raw/log"
 
 
 class Consumer:
