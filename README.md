@@ -63,7 +63,8 @@ The server perceives that requests come directly from MitmProxy, which means it 
 cat path/to/mitm-proxy-ca-cert.pem >> env/lib/python3.12/site-packages/certifi/cacert.pem
 ```
 
-Optionally, append it to the global certifi package by locating `cacert.pem` and performing a similar operation.
+Optionally, append it to the global certifi package by locating `cacert.pem` and performing a similar operation.  
+If you face any challenges setting this up, contact 
 
 ### Starting the App
 

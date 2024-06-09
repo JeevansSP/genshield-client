@@ -68,3 +68,6 @@ def response(flow: http.HTTPFlow) -> None:
             "is_stream": not flow.response.stream is False,
         }
     )
+
+    if not flow.response.stream is False and stream_responses.get(flow.stream_id):
+        del stream_responses[flow.stream_id]
