@@ -48,8 +48,8 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 - [Mac](https://www.youtube.com/watch?v=7BXsaU42yok&t=525s)
 - [Windows](https://www.youtube.com/watch?v=AacH2L_D2B8)
-- [Linux](https://www.youtube.com/watch?v=igcsLKDfssw)
-- it all boild down to these steps:
+- [Linux](https://www.youtube.com/watch?v=igcsLKDfssw) 
+- it all boils down to these steps:
     1. enable http/https proxy in the system and point it to `http://localhost:8080`
     2. add `mitmproxy-ca-cert.pem` into the system's trusted ca bundle
     3. append the same cert to the python packages `certifi`'s `cacert.pem` file
