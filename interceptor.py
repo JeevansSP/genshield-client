@@ -4,7 +4,7 @@ from typing import List, Union
 import json
 
 from concurrent.futures import ThreadPoolExecutor
-from Consumer import Consumer
+from consumer import Consumer
 from pprint import pprint
 import uuid
 

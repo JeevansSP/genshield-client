@@ -1,27 +1,39 @@
 #!/bin/bash
 
-# Install mitmproxy
-echo "Installing mitmproxy..."
+# exec 1>logfile.txt 2>&1
+
+# Install mitmproxy based on the OS
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo "Installing mitmproxy on Ubuntu..."
+    sudo apt-get update
+    sudo apt-get install -y mitmproxy
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "Installing mitmproxy on macOS..."
+    brew install mitmproxy
+else
+    echo "Unsupported OS"
+    exit 1
+fi
+
 pip install mitmproxy
 
-# Run mitmproxy in the background to generate the certificate
-echo "Running mitmproxy to generate certificates..."
-mitmproxy -p 8080 &
-
+# Run mitmdump in the background to generate the certificate and not require a TTY
+echo "Running mitmdump to generate certificates..."
+mitmdump -p 8080 &
 MITMPROXY_PID=$!
 
-# Wait for mitmproxy to initialize
+# Wait for mitmdump to initialize
 sleep 5
 
 # Use curl to hit google.com to initiate certificate generation
 echo "Accessing google.com to ensure certificate generation..."
 curl -x http://localhost:8080 https://google.com
 
-# Stop mitmproxy
-echo "Stopping mitmproxy..."
+# Stop mitmdump
+echo "Stopping mitmdump..."
 kill $MITMPROXY_PID
 
-# Install mitmproxy certificate to the system's trusted CA bundle and Python's certifi package
+# Process for installing certificates as before
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux/Ubuntu
     echo "Installing certificate on Ubuntu..."
@@ -39,10 +51,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.mitmproxy/mitmproxy-ca-cert.pem
 
     # Append to Python's certifi package store
-    CERT_FILE=$(python -m certifi)
+    CERT_FILE=$(python3 -m certifi)
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
-else
-    echo "Unsupported OS"
 fi
 
 echo "Setup complete!"
