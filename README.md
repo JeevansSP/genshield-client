@@ -45,6 +45,10 @@ The server perceives that requests come directly from MitmProxy, which means it 
 3. Run the SherLogs start script to set up the proxy and start `mitmdump`:
    `run.sh "<your_api_key>"`
 
+### Note
+- Based on your os you might have to manually set up `http_proxy` and `https_proxy` to `http://localhost:8080` 
+- If the python script you are running is in a differnt env you will have to add the mitm cert to that env's certifi package, `cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a <path_to_env>/lib/python3.xx/site-packages/certifi/cacert.pem`
+
 
 ## Features
 
@@ -55,6 +59,5 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 - Implement interceptor logic for LLM services such as Ollama, Llama.cpp, HuggingFace, Anthropic, and Gorq. Most of these services follow an OpenAI-compatible pattern, and parsers for many are already implemented server-side.
 - Address the challenge of intercepting Google's generative AI package which utilizes `gRPC` for their Gemini calls.
-- Based on your os you might have to manually set up `http_proxy` and `https_proxy` to `http://localhost:8080` 
 
 
