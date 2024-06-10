@@ -47,7 +47,7 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Note
 - Based on your os you might have to manually set up `http_proxy` and `https_proxy` to `http://localhost:8080` 
-- If the python script you are running is in a differnt env you will have to add the mitm cert to that env's certifi package, `cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a <path_to_env>/lib/python3.xx/site-packages/certifi/cacert.pem`
+- If the python script you are running is in a differnt env you will have to add the mitm cert to that env's certifi package, `cat ~/.mitmproxy/mitmproxy-ca-cert.pem >> <path_to_env>/lib/python3.xx/site-packages/certifi/cacert.pem`
 
 
 ## Features
