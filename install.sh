@@ -44,6 +44,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Append to Python's certifi package store
     CERT_FILE=$(python3 -m certifi)
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
+    echo "# Defaults env_keep += \"http_proxy https_proxy HTTP_PROXY HTTPS_PROXY\"" | sudo tee -a /etc/sudoers
+
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
