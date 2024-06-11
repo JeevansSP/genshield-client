@@ -42,7 +42,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo update-ca-certificates
 
     # Append to Python's certifi package store
-    CERT_FILE=$(python -m certifi)
+    CERT_FILE=$(python3 -m certifi)
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
