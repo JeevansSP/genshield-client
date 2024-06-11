@@ -38,7 +38,7 @@ echo "HTTPS Proxy: $https_proxy"
 
 # Start mitmdump in the background and redirect its output to a log file
 echo "Starting mitmdump to handle HTTP and HTTPS traffic..."
-mitmdump -p 8080 -s ./interceptor.py 
+mitmdump -p 8080 -s /home/app/sherlogs-client/interceptor.py 
 
 # MITMDUMP_PID=$!
 # echo "mitmdump is running with PID $MITMDUMP_PID, logging to mitmdump.log."
