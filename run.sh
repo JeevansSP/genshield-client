@@ -33,9 +33,9 @@ echo "HTTPS Proxy: $https_proxy"
 
 # Start mitmdump in the background and redirect its output to a log file
 echo "Starting mitmdump to handle HTTP and HTTPS traffic..."
-mitmdump -p 8080 -s ./interceptor.py 
+mitmdump -p 8080 -s ./interceptor.py > mitmdump.log  2>&1 
 
-# MITMDUMP_PID=$!
-# echo "mitmdump is running with PID $MITMDUMP_PID, logging to mitmdump.log."
+MITMDUMP_PID=$!
+echo "mitmdump is running with PID $MITMDUMP_PID, logging to mitmdump.log."
 
-# echo "Setup is complete and system proxy settings are applied."
+echo "Setup is complete and system proxy settings are applied."
