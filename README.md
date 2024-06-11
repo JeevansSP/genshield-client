@@ -43,7 +43,7 @@ The server perceives that requests come directly from MitmProxy, which means it 
 
 ### Certificate Installation
 
-8. Visit `http://mitm.it` to download the appropriate certificate.
+8. Visit `http://mitm.it` to download the appropriate certificate. 
 9. Follow the installation guides for your system:
 
 - [Mac](https://www.youtube.com/watch?v=7BXsaU42yok&t=525s)
