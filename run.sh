@@ -15,18 +15,10 @@ echo "SHERLOGS_API_KEY set to $SHERLOGS_API_KEY"
 
 
 # Set up system-wide proxy settings for HTTP and HTTPS
-echo "Setting up system-wide HTTP and HTTPS proxy settings..."
 
-export http_proxy="http://localhost:8080"
-export https_proxy="http://localhost:8080"
-export HTTP_PROXY="http://localhost:8080"
-export HTTPS_PROXY="http://localhost:8080"
 
 # Append proxy settings to .profile to ensure they persist after reboot
-echo "export http_proxy=\"http://localhost:8080\"" >> ~/.profile
-echo "export https_proxy=\"http://localhost:8080\"" >> ~/.profile
-echo "export HTTP_PROXY=\"http://localhost:8080\"" >> ~/.profile
-echo "export HTTPS_PROXY=\"http://localhost:8080\"" >> ~/.profile
+
 
 # For sudo commands to keep proxy settings
 sudo sed -i '/# Defaults env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"/s/^# //g' /etc/sudoers

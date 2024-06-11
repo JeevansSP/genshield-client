@@ -46,6 +46,11 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
     echo "# Defaults env_keep += \"http_proxy https_proxy HTTP_PROXY HTTPS_PROXY\"" | sudo tee -a /etc/sudoers
 
+    echo "export http_proxy=\"http://localhost:8080\"" >> ~/.profile
+    echo "export https_proxy=\"http://localhost:8080\"" >> ~/.profile
+    echo "export HTTP_PROXY=\"http://localhost:8080\"" >> ~/.profile
+    echo "export HTTPS_PROXY=\"http://localhost:8080\"" >> ~/.profile
+
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # macOS
