@@ -33,22 +33,53 @@ The server perceives that requests come directly from MitmProxy, which means it 
 5. Install the required packages:  
    `pip install -r requirements.txt`
 
-6. Run the installation script to install `mitmproxy` and set up certificates:
-   `sudo ./install_mitmproxy.sh`
+### Configuration and Running
 
-### Running
+6. Start the MitmProxy server in headless mode on port 8080, listening to ports 80 and 443:  
+   `mitmproxy -p 8080`
 
-1. Register and generate an API key at `https://sherlogs.cydratech.com`.
+7. Initially, any web connections from browsers will fail due to the lack of a trusted certificate.
 
-2. Export the API key in your current shell session:
+### Certificate Installation
 
-3. Run the SherLogs start script to set up the proxy and start `mitmdump`:
-   `run.sh "<your_api_key>"`
+8. Visit `http://mitm.it` to download the appropriate certificate. 
+9. Follow the installation guides for your system:
 
-### Note
+- [Mac](https://www.youtube.com/watch?v=7BXsaU42yok&t=525s)
+- [Windows](https://www.youtube.com/watch?v=AacH2L_D2B8)
+- [Linux](https://www.youtube.com/watch?v=igcsLKDfssw) 
+- it all boils down to these steps:
+    1. enable http/https proxy in the system and point it to `http://localhost:8080`
+    2. add `mitmproxy-ca-cert.pem` into the system's trusted ca bundle
+    3. append the same cert to the python packages `certifi`'s `cacert.pem` file
+    4. In ubuntu the cert is generated in `~/.mitmproxy` after it has been run for a while
+    5. `export http_proxy="http://localhost:8080"` wont persist when using sudo unless you modify the `visudo` file
 
-- Based on your os you might have to manually set up `http_proxy` and `https_proxy` to `http://localhost:8080`
-- If the python script you are running is in a differnt env you will have to add the mitm cert to that env's certifi package, `cat ~/.mitmproxy/mitmproxy-ca-cert.pem >> <path_to_env>/lib/python3.xx/site-packages/certifi/cacert.pem`
+
+10. Append the downloaded `mitm-proxy-ca-cert.pem` to your local Python environment's certifi package:
+
+```
+cat path/to/mitm-proxy-ca-cert.pem >> env/lib/python3.12/site-packages/certifi/cacert.pem
+```
+
+Optionally, append it to the global certifi package by locating `cacert.pem` and performing a similar operation.  
+If you face any challenges setting this up, contact 
+
+### Starting the App
+
+11. Register and generate an API key at
+    `https://sherlogs.cydratech.com`.
+12. Export the API key in your current shell session:
+
+```
+export SHERLOGS_API_KEY="<your_api_key>"
+```
+
+13. Run the SherLogs start script:
+
+```
+./startSherlogs.sh
+```
 
 ## Features
 
