@@ -29,7 +29,7 @@ echo "export HTTP_PROXY=\"http://localhost:8080\"" >> ~/.profile
 echo "export HTTPS_PROXY=\"http://localhost:8080\"" >> ~/.profile
 
 # For sudo commands to keep proxy settings
-echo "Defaults env_keep += \"http_proxy https_proxy\"" | sudo tee -a /etc/sudoers
+echo "Defaults env_keep += \"http_proxy https_proxy HTTP_PROXY HTTPS_PROXY\"" | sudo tee -a /etc/sudoers
 
 # Verify the proxy settings
 echo "Verifying proxy settings..."
