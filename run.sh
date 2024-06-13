@@ -14,9 +14,6 @@ export SHERLOGS_API_KEY="$api_key"
 echo "SHERLOGS_API_KEY set to $SHERLOGS_API_KEY"
 
 
-
-
-
 # Verify the proxy settings
 echo "Verifying proxy settings..."
 echo "HTTP Proxy: $http_proxy"
@@ -26,7 +23,4 @@ echo "HTTPS Proxy: $https_proxy"
 echo "Starting mitmdump to handle HTTP and HTTPS traffic..."
 mitmdump -p 8080 -s /home/app/sherlogs-client/interceptor.py 
 
-# MITMDUMP_PID=$!
-# echo "mitmdump is running with PID $MITMDUMP_PID, logging to mitmdump.log."
 
-# echo "Setup is complete and system proxy settings are applied."

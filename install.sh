@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# exec 1>logfile.txt 2>&1
 
 # Install mitmproxy based on the OS
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -33,7 +32,7 @@ curl -x http://localhost:8080 https://google.com
 echo "Stopping mitmdump..."
 kill $MITMPROXY_PID
 
-# Process for installing certificates as before
+# Process for installing certificates 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux/Ubuntu
     echo "Installing certificate on Ubuntu..."
@@ -44,7 +43,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Append to Python's certifi package store
     CERT_FILE=$(python3 -m certifi)
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
-    echo "# Defaults env_keep += \"http_proxy https_proxy HTTP_PROXY HTTPS_PROXY\"" | sudo tee -a /etc/sudoers
+
 
     echo "export http_proxy=\"http://localhost:8080\"" >> ~/.profile
     echo "export https_proxy=\"http://localhost:8080\"" >> ~/.profile
