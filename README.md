@@ -52,7 +52,8 @@ If You are running python scripts in a virtual env you will have to append the m
 To use SherLogs:
 1. Ensure the proxy settings are correctly configured.
 2. Run the script with your API key to start intercepting and analyzing LLM service traffic:
-   `./run.sh your_api_key_here` (`nohup ./run.sh your_api_key_here  > /dev/null 2>&1 &` if you want to run it in the background)
+   `./run.sh your_api_key_here`  
+   (`nohup ./run.sh your_api_key_here  > /dev/null 2>&1 &` if you want to run it in the background)
 
 ## Additional Notes
 
