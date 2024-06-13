@@ -27,7 +27,8 @@ This script will handle the installation of MitmProxy, configure your environmen
 
 5. Start the application by running:
    `./run.sh <your_api_key>`
-Replace `<your_api_key>` with your actual API key. This script sets the API key as an environment variable and starts MitmProxy to intercept traffic.
+Replace `<your_api_key>` with your actual API key. This script sets the API key as an environment variable and starts MitmProxy to intercept traffic.  
+Visit [Sherlogs](https://sherlogs.web.app) to generate an api key.
 
 ## Features
 
