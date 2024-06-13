@@ -8,7 +8,7 @@ SherLogs is an innovative application designed to intercept and analyze network 
 
 ### Installation
 
-1. Clone the repository: (to `/home/app` directory)
+1. Clone the repository: (to `/home/app` directory) 
    `git clone https://github.com/JeevansSP/sherlogs-client`
 2. Navigate to the project directory:
    `cd sherlogs-client`
