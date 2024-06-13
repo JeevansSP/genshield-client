@@ -12,7 +12,9 @@ SherLogs is an innovative application designed to intercept and analyze network 
    `git clone https://github.com/JeevansSP/sherlogs-client`
 2. Navigate to the project directory:
    `cd sherlogs-client`
-3. Run the installation script:
+3. Make sure python is installed by checking
+   `python3 --version`
+4. Run the installation script:
    `./install.sh`
 This script will handle the installation of MitmProxy, configure your environment, and set up necessary certificates based on your operating system.
 
@@ -41,6 +43,9 @@ Visit [Sherlogs](https://sherlogs.web.app) to generate an api key.
 If you encounter any issues with HTTPS connections after setup, you may need to manually trust the MitmProxy certificate:
 - Access the generated certificate at `~/.mitmproxy/mitmproxy-ca-cert.pem`.
 - Follow the OS-specific instructions to install and trust the certificate in your system and Python environment.
+  
+If You are running python scripts in a virtual env you will have to append the mitm cert to your venv's certifi chain
+   `cat /.mitmproxy/mitmproxy-ca-cert.pem >> <path_to_venv>/<venv_folder_name>/libs/python3.xx/site-packages/certifi/<certificate_bundle>.pem`
 
 ## Usage
 
