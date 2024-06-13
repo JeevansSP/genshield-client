@@ -14,14 +14,8 @@ export SHERLOGS_API_KEY="$api_key"
 echo "SHERLOGS_API_KEY set to $SHERLOGS_API_KEY"
 
 
-# Set up system-wide proxy settings for HTTP and HTTPS
 
 
-# Append proxy settings to .profile to ensure they persist after reboot
-
-
-# For sudo commands to keep proxy settings
-sudo sed -i '/# Defaults env_keep += "http_proxy https_proxy HTTP_PROXY HTTPS_PROXY"/s/^# //g' /etc/sudoers
 
 # Verify the proxy settings
 echo "Verifying proxy settings..."

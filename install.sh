@@ -60,6 +60,11 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Append to Python's certifi package store
     CERT_FILE=$(python3 -m certifi)
     cat ~/.mitmproxy/mitmproxy-ca-cert.pem | sudo tee -a $CERT_FILE
+
+else
+    echo "Unsupported OS"
+    exit 1
 fi
+
 
 echo "Setup complete!"
