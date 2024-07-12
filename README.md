@@ -1,4 +1,4 @@
-# genshield Client App
+# GenShield Client App
 
 ## Description
 
