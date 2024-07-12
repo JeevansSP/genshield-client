@@ -1,17 +1,17 @@
-# SherLogs Client App
+# genshield Client App
 
 ## Description
 
-SherLogs is an innovative application designed to intercept and analyze network traffic between client applications and various LLM services like OpenAI and Google. This analysis helps ensure the safety and compliance of data exchanged. SherLogs utilizes MitmProxy, a versatile tool for inspecting, modifying, and decrypting HTTP and HTTPS traffic.
+genshield is an innovative application designed to intercept and analyze network traffic between client applications and various LLM services like OpenAI and Google. This analysis helps ensure the safety and compliance of data exchanged. genshield utilizes MitmProxy, a versatile tool for inspecting, modifying, and decrypting HTTP and HTTPS traffic.
 
 ## Setup
 
 ### Installation
 
 1. Clone the repository: (to `/home/app` directory) 
-   `git clone https://github.com/JeevansSP/sherlogs-client`
+   `git clone https://github.com/JeevansSP/genshield-client`
 2. Navigate to the project directory:
-   `cd sherlogs-client`
+   `cd genshield-client`
 3. Make sure python is installed by checking
    `python3 --version`
 4. Run the installation script:
@@ -30,7 +30,7 @@ This script will handle the installation of MitmProxy, configure your environmen
 5. Start the application by running:
    `./run.sh <your_api_key>`
 Replace `<your_api_key>` with your actual API key. This script sets the API key as an environment variable and starts MitmProxy to intercept traffic.  
-Visit [Sherlogs](https://sherlogs.web.app) to generate an api key.
+Visit [genshield](https://genshield.web.app) to generate an api key.
 
 ## Features
 
@@ -49,7 +49,7 @@ If You are running python scripts in a virtual env you will have to append the m
 
 ## Usage
 
-To use SherLogs:
+To use genshield:
 1. Ensure the proxy settings are correctly configured.
 2. Run the script with your API key to start intercepting and analyzing LLM service traffic:
    `./run.sh your_api_key_here`  
@@ -58,7 +58,7 @@ To use SherLogs:
 ## Additional Notes
 
 - For detailed command usage and troubleshooting, refer to the comprehensive comments in the `install.sh` and `run.sh` scripts.
-- Visit our support page for more help and FAQs about SherLogs setup and operations.
+- Visit our support page for more help and FAQs about genshield setup and operations.
 
 ## Todo
 
